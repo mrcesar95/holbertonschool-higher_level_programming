@@ -86,3 +86,10 @@ class Rectangle(Base):
             for i in range(0, self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """overriding to returns [Rectangle] + information"""
+        string = "[Rectangle] ({:d}) {:d}/{:d} -{:d}/{:d}"
+        string = string.format(self.id, self.x, self.y,
+                               self.width, self.height)
+        return string
