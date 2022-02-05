@@ -2,6 +2,7 @@
 """Module for the class Rectangle"""
 
 
+from multiprocessing.sharedctypes import Value
 from models.rectangle import Rectangle
 
 
@@ -16,3 +17,10 @@ class Square(Rectangle):
     def size(self):
         """property of size"""
         return self.width
+
+    @size.setter
+    def size(self, value):
+        """setter of size but unsing the attribute of Rectangle:
+        -first width because we want the error validation of its"""
+        self.width = value
+        self.height = value
