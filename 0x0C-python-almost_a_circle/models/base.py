@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for the class Base"""
 import json
+from unittest import result
 
 
 class Base:
@@ -27,3 +28,16 @@ class Base:
         else:
             string = json.dumps(list_dictionaries)
             return string
+
+    @staticmethod
+    def save_to_file(cls, list_objs):
+        """Methodthat writes the JSON string
+        representation of list_objs to a file"""
+        filename = cls.__name__ + ".json"
+        result = []
+        if list_objs:
+            for objs in list_objs:
+                dictionary = objs.to_dictionary()
+                result.append(dictionary)
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(result))
