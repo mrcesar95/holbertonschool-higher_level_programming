@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for the class Base"""
 import json
-from unittest import result
+import stat
 
 
 class Base:
@@ -41,3 +41,11 @@ class Base:
                 result.append(dictionary)
         with open(filename, "w", encoding="utf-8") as file:
             file.write(cls.to_json_string(result))
+
+    @staticmethod
+    def from_jason_string(json_string):
+        """Method that returnsthe list of the JSON
+        string representation json_string"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
