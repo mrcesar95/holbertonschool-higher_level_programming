@@ -2,8 +2,6 @@
 """Module for the class Rectangle"""
 
 
-from inspect import ArgSpec
-from tkinter.messagebox import NO
 from models.base import Base
 
 
