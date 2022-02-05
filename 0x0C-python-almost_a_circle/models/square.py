@@ -2,7 +2,6 @@
 """Module for the class Rectangle"""
 
 
-from tkinter.messagebox import NO
 from models.rectangle import Rectangle
 
 
@@ -38,3 +37,15 @@ class Square(Rectangle):
         elif kwargs is not None:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def __str__(self):
+        """overriding to return [Square] + more information"""
+        string = "[Square] ({:d}) {:d}/{:d} - {:d}"
+        string = string.format(self.id, self.x, self.y, self.width)
+        return string
+
+    def to_dictionary(self):
+        """Method that returns the dictionary representation of a Rectangle"""
+        key_list = ["id", "size", "x", "y"]
+        value_list = [self.id, self.width, self.x, self.y]
+        return dict(zip(key_list, value_list))
