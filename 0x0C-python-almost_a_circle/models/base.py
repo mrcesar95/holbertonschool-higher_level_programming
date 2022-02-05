@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Module for the class Base"""
 import json
-from multiprocessing import dummy
-import stat
 
 
 class Base:
@@ -60,3 +58,17 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Method that returns a list of instances"""
+        filename = cls.__name__ + ".jason"
+        result = []
+        try:
+            with open(filename, encoding="utf-8") as file:
+                obj_list = cls.from_jason_string(file.read())
+                for dictionary in obj_list:
+                    result.append(cls.create(**dictionary))
+                return result
+        except:
+            return result
