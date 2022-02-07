@@ -66,7 +66,7 @@ class Base:
         result = []
         try:
             with open(filename, encoding="utf-8") as file:
-                obj_list = cls.from_jason_string(file.read())
+                obj_list = cls.from_json_string(file.read())
                 for dictionary in obj_list:
                     result.append(cls.create(**dictionary))
                 return result
