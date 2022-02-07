@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """Module for the class Rectangle"""
 
 
@@ -18,7 +18,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """width propety"""
+        """width property"""
         return self.__width
 
     @width.setter
@@ -73,7 +73,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Method calculate the area of rectangle"""
+        """Method to calculate the area of rectangle"""
         return(self.width * self.height)
 
     def display(self):
@@ -89,13 +89,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """overriding to returns [Rectangle] + information"""
-        string = "[Rectangle] ({:d}) {:d}/{:d} -{:d}/{:d}"
+        string = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
         string = string.format(self.id, self.x, self.y,
                                self.width, self.height)
         return string
 
     def update(self, *args, **kwargs):
-        """Method that assings update attributes"""
+        """Method that assigns update attributes"""
         args_list = ["id", "width", "height", "x", "y"]
         if args and args[0] is not None:
             if len(args) > len(args_list):
