@@ -28,7 +28,7 @@ class Base:
             string = json.dumps(list_dictionaries)
             return string
 
-    @staticmethod
+    @classmethod
     def save_to_file(cls, list_objs):
         """Methodthat writes the JSON string
         representation of list_objs to a file"""
