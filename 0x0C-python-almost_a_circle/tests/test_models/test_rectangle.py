@@ -3,13 +3,14 @@
 Test differents behaviors of the Rectangle Class
 """
 import unittest
+import pep8
 from io import StringIO
 import os
 from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-from pep8 import PEP8Normalizer
+
 
 
 class Test_Rectangle_creation(unittest.TestCase):
@@ -18,7 +19,7 @@ class Test_Rectangle_creation(unittest.TestCase):
         """
         Test that checks PEP8
         """
-        syntax = PEP8Normalizer.StyleGuide(quit=True)
+        syntax = pep8.StyleGuide.StyleGuide(quit=True)
         check = syntax.check_files(['models/rectangle.py'])
         self.assertEqual(
             check.total_errors, 0,

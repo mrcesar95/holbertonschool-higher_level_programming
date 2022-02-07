@@ -3,11 +3,12 @@
 Test differents behaviors of the Base class
 """
 import unittest
+import pep8
 import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-from pep8 import PEP8Normalizer
+
 
 
 class TestBase(unittest.TestCase):
@@ -18,7 +19,7 @@ class TestBase(unittest.TestCase):
         """
         #Test that checks PEP8
         """
-        syntax = PEP8Normalizer.StyleGuide(quit=True)
+        syntax = pep8.StyleGuide(quit=True)
         check = syntax.check_files(['models/base.py'])
         self.assertEqual(
             check.total_errors, 0,
