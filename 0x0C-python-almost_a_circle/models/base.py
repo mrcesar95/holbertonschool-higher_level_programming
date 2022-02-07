@@ -42,7 +42,7 @@ class Base:
             file.write(cls.to_json_string(result))
 
     @staticmethod
-    def from_jason_string(json_string):
+    def from_json_string(json_string):
         """Method that returnsthe list of the JSON
         string representation json_string"""
         if json_string is None or len(json_string) == 0:
