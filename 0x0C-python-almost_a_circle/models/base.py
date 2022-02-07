@@ -62,7 +62,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Method that returns a list of instances"""
-        filename = cls.__name__ + ".jason"
+        filename = cls.__name__ + ".json"
         result = []
         try:
             with open(filename, encoding="utf-8") as file:
