@@ -1,15 +1,14 @@
 #!/usr/bin/node
-// script that computes the factorial of a number
+// script that computes and prints a factorial
 
 const { argv } = require('process');
 const n = parseInt(argv[2]);
 
 function factorial (n) {
-  if (n === 0) {
+  if (isNaN(n) || n === 1) {
     return 1;
-  } else {
-    return n * factorial(n - 1);
   }
+  return n * factorial(n - 1);
 }
 
 console.log(factorial(n));
