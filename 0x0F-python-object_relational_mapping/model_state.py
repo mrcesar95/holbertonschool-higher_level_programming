@@ -8,9 +8,9 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 Base = declarative_base()
 
 
-class City(Base):
+class State(Base):
     """
-    City class
+    State class
     """
     pass
     __tablename__ = 'cities'
